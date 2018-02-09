@@ -14,10 +14,39 @@ public class Room {
 	//private List<Monster> monsters;
 	//private List<Item> items;
 
-	public Room() {
+	public Room(Room comingFrom, String throughWhichDoor) {
 		isFound = false;
 		//monsters = new ArrayList<Monster>();
 		//items = new ArrayList<Item>();
-	}
 
+		switch (throughWhichDoor){
+			case "left":
+			case "Left":
+				this.right = comingFrom;
+				this.right.left = this;
+				break;
+
+			case "right":
+			case "Right":
+				this.left = comingFrom;
+				this.left.right = this;
+				break;
+
+			case "forward":
+			case "Forward":
+				this.backward = comingFrom;
+				this.backward.forward = this;
+				break;
+
+			case "backward":
+			case "Backward":
+				this.forward = comingFrom;
+				this.forward.backward = this;
+				break;
+
+			default:
+				throw new IllegalArgumentException(throughWhichDoor + " is not a valid argument!");
+		}
+
+	}
 }
