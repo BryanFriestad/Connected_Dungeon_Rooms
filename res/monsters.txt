@@ -1,0 +1,23 @@
+-4-Beast
+Wolf
+Bear
+Tiger
+Mountain Lion
+-2-Demon
+Harpie
+Demonic-AF-Beast
+-2-Humanoid
+Bandit
+-5-Goblin
+Greedy ~
+Sneaky ~
+~ Assassin
+Angry ~
+~ Sorcerer
+-6-Bourg
+Water ~
+Fire ~
+Earth ~
+Moss ~
+Dust ~
+Bone ~
