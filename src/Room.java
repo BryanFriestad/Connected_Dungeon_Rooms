@@ -16,6 +16,12 @@ public class Room {
 	//private List<Monster> monsters;
 	//private List<Item> items;
 
+	/**
+	 *Creates a new Room that is either an Entrance or and Exit in the Dungeon. An Entrance only has one door at the
+	 * back and does not have a chance for monsters or loot. The Exit will also only have one door, but it can be
+	 * any of the walls.
+	 * @param special_type The type of special room. This can either be "entrance" or "exit"
+	 */
 	public Room(String special_type){
 		//handle being either an entrance or an exit
 	}
