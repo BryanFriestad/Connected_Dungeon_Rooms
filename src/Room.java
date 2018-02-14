@@ -10,9 +10,15 @@ public class Room {
 	private Room down;
 	
 	private boolean isFound;
+
+	private int num_of_doors;
 	
 	//private List<Monster> monsters;
 	//private List<Item> items;
+
+	public Room(String special_type){
+		//handle being either an entrance or an exit
+	}
 
 	public Room(Room comingFrom, String throughWhichDoor) {
 		isFound = false;
@@ -47,6 +53,5 @@ public class Room {
 			default:
 				throw new IllegalArgumentException(throughWhichDoor + " is not a valid argument!");
 		}
-
 	}
 }

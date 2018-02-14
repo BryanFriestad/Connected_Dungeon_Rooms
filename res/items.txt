@@ -1,0 +1,8 @@
+#formatting this document
+#1) lines that start with '#' are ignored, every other line will be interpreted as an item
+#2) each item will need, at minimum, a name, an item type, a required level range, and a price range in gold coins
+#3) some items, depending upon which type of item they are, will require additional data, such as armor slot, protection points range, or damage points range
+#4) these different data pieces will each be separted by semicolons ';'
+#
+#Armor
+Iron Helmet;armor;1;10;15;35
