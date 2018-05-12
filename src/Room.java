@@ -60,4 +60,25 @@ public class Room {
 				throw new IllegalArgumentException(throughWhichDoor + " is not a valid argument!");
 		}
 	}
+
+	public Room getForward() {
+		return forward;
+	}
+
+	public Room getBackward() {
+		return backward;
+	}
+
+	public Room getLeft() {
+		return left;
+	}
+
+	public Room getRight() {
+		return right;
+	}
+
+	public boolean isFound() {
+		return isFound;
+	}
+	
 }
