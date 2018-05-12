@@ -2,12 +2,12 @@ import java.util.List;
 
 public class Room {
 	
-	private Room forward;
-	private Room backward;
-	private Room left;
-	private Room right;
-	private Room up; //these are going to go unused for now because I want to develop the 2-D aspect first
-	private Room down;
+	private Room forward = null;
+	private Room backward = null;
+	private Room left = null;
+	private Room right = null;
+	private Room up = null; //these are going to go unused for now because I want to develop the 2-D aspect first
+	private Room down = null;
 	
 	private boolean isFound;
 
@@ -24,40 +24,43 @@ public class Room {
 	 */
 	public Room(String special_type){
 		//handle being either an entrance or an exit
+		if(special_type.equals("entrance")){
+			this.num_of_doors = 1;
+			//TODO
+		}
+		else if(special_type.equals("exit")){
+			this.num_of_doors = 1;
+			//TODO
+		}
+		else{
+			throw new IllegalArgumentException("Error: special_type must be entrance or exit");
+		}
 	}
 
 	public Room(Room comingFrom, String throughWhichDoor) {
 		isFound = false;
+		num_of_doors = 1;
 		//monsters = new ArrayList<Monster>();
 		//items = new ArrayList<Item>();
 
-		switch (throughWhichDoor){
-			case "left":
-			case "Left":
-				this.right = comingFrom;
-				this.right.left = this;
-				break;
+		if (throughWhichDoor.equals("left") || throughWhichDoor.equals("Left")) {
+			this.right = comingFrom;
+			this.right.left = this;
 
-			case "right":
-			case "Right":
-				this.left = comingFrom;
-				this.left.right = this;
-				break;
+		} else if (throughWhichDoor.equals("right") || throughWhichDoor.equals("Right")) {
+			this.left = comingFrom;
+			this.left.right = this;
 
-			case "forward":
-			case "Forward":
-				this.backward = comingFrom;
-				this.backward.forward = this;
-				break;
+		} else if (throughWhichDoor.equals("forward") || throughWhichDoor.equals("Forward")) {
+			this.backward = comingFrom;
+			this.backward.forward = this;
 
-			case "backward":
-			case "Backward":
-				this.forward = comingFrom;
-				this.forward.backward = this;
-				break;
+		} else if (throughWhichDoor.equals("backward") || throughWhichDoor.equals("Backward")) {
+			this.forward = comingFrom;
+			this.forward.backward = this;
 
-			default:
-				throw new IllegalArgumentException(throughWhichDoor + " is not a valid argument!");
+		} else {
+			throw new IllegalArgumentException(throughWhichDoor + " is not a valid argument!");
 		}
 	}
 
