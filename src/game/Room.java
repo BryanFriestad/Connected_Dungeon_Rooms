@@ -1,4 +1,4 @@
-import java.util.List;
+package game;
 
 public class Room {
 	
@@ -14,10 +14,10 @@ public class Room {
 	private int num_of_doors;
 	
 	//private List<Monster> monsters;
-	//private List<Item> items;
+	//private List<game.Item> items;
 
 	/**
-	 *Creates a new Room that is either an Entrance or and Exit in the Dungeon. An Entrance only has one door at the
+	 *Creates a new game.Room that is either an Entrance or and Exit in the game.Dungeon. An Entrance only has one door at the
 	 * back and does not have a chance for monsters or loot. The Exit will also only have one door, but it can be
 	 * any of the walls.
 	 * @param special_type The type of special room. This can either be "entrance" or "exit"
@@ -41,7 +41,7 @@ public class Room {
 		isFound = false;
 		num_of_doors = 1;
 		//monsters = new ArrayList<Monster>();
-		//items = new ArrayList<Item>();
+		//items = new ArrayList<game.Item>();
 
 		if (throughWhichDoor.equals("left") || throughWhichDoor.equals("Left")) {
 			this.right = comingFrom;
